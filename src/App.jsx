@@ -10,9 +10,11 @@ export default function App() {
     <div className="wrap">
       <Background />
       <Header />
-      <AuroraIntro />
-      <Projects />
-      <SupportSection />
+      <main>
+        <AuroraIntro />
+        <Projects />
+        <SupportSection />
+      </main>
       <Footer />
     </div>
   );
@@ -46,17 +48,17 @@ function Header() {
     <header className="header">
       <img
         src={logo}
-        alt="Bug Queen Studios Logo"
+        alt="Bug Queen Flow Studios Logo - Independent game studio creating visual novels and music"
         className="logo"
       />
-      <h1 className="title">Bug Queen Studios</h1>
+      <h1 className="title">Bug Queen Flow Studios</h1>
       <p className="subtitle">
         Yoga teacher codes games. Makes too much music. Guided by Aurora.
       </p>
-      <div className="cta">
+      <nav className="cta" role="navigation" aria-label="Main navigation">
         <a href="#projects" className="button">Play</a>
         <a href="#about" className="button secondary">Explore</a>
-      </div>
+      </nav>
     </header>
   );
 }
@@ -87,9 +89,9 @@ function AuroraIntro() {
 
 function Projects() {
   return (
-    <section className="projects" id="projects">
-      <h2>What We're Making</h2>
-      <div className="cards">
+    <section className="projects" id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">What We're Making</h2>
+      <div className="cards" role="list">
         <ProjectCard
           emoji="🎮"
           title="Chakra Hearts"
@@ -121,10 +123,10 @@ function Projects() {
 
 function ProjectCard({ emoji, title, desc, linkText, link, image }) {
   return (
-    <div className="card">
+    <article className="card" role="listitem">
       {image ? (
         <div className="card-image">
-          <img src={image} alt={title} style={{
+          <img src={image} alt={`${title} - Visual preview of the project`} style={{
             width: '100%',
             height: '200px',
             objectFit: 'cover',
@@ -133,14 +135,14 @@ function ProjectCard({ emoji, title, desc, linkText, link, image }) {
           }} />
         </div>
       ) : (
-        <div className="emoji">{emoji}</div>
+        <div className="emoji" aria-hidden="true">{emoji}</div>
       )}
       <h3>{title}</h3>
       <p>{desc}</p>
-      <a href={link} className="card-link" target="_blank" rel="noopener noreferrer">
+      <a href={link} className="card-link" target="_blank" rel="noopener noreferrer" aria-label={`${linkText} for ${title}`}>
         {linkText} ↗
       </a>
-    </div>
+    </article>
   );
 }
 
