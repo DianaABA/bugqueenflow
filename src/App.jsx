@@ -1,6 +1,8 @@
 import React from "react";
 import logo from "./assets/logo.png.png";
 import auroraImg from "./assets/aurora_human.png";
+import auroraUmbra from "./assets/aurora_umbra.png";
+import albumCover from "./assets/album_cover.png";
 
 export default function App() {
   return (
@@ -18,6 +20,21 @@ export default function App() {
 function Background() {
   return (
     <div className="bg" aria-hidden="true">
+      <div 
+        className="aurora-background" 
+        style={{
+          backgroundImage: `url(${auroraUmbra})`,
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: 0.3,
+          zIndex: -2
+        }}
+      />
       <div className="grid" />
     </div>
   );
@@ -88,6 +105,7 @@ function Projects() {
           desc="34-track original soundtrack blending Bollywood, K-pop, meditation, and chaos. Made with AI (Suno), but guided by soul."
           linkText="Preview Tracks"
           link="#"
+          image={albumCover}
         />
         <ProjectCard
           emoji="⚙️"
@@ -101,10 +119,22 @@ function Projects() {
   );
 }
 
-function ProjectCard({ emoji, title, desc, linkText, link }) {
+function ProjectCard({ emoji, title, desc, linkText, link, image }) {
   return (
     <div className="card">
-      <div className="emoji">{emoji}</div>
+      {image ? (
+        <div className="card-image">
+          <img src={image} alt={title} style={{
+            width: '100%',
+            height: '200px',
+            objectFit: 'cover',
+            borderRadius: '8px',
+            marginBottom: '1rem'
+          }} />
+        </div>
+      ) : (
+        <div className="emoji">{emoji}</div>
+      )}
       <h3>{title}</h3>
       <p>{desc}</p>
       <a href={link} className="card-link" target="_blank" rel="noopener noreferrer">
