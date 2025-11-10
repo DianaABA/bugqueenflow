@@ -3,6 +3,7 @@ import logo from "./assets/logo.png.png";
 import auroraImg from "./assets/aurora_human.png";
 import auroraUmbra from "./assets/aurora_umbra.png";
 import albumCover from "./assets/album_cover.png";
+import auroraEngine from "./assets/aurora_engine.png";
 
 export default function App() {
   return (
@@ -63,9 +64,6 @@ function Header() {
 function AuroraIntro() {
   return (
     <section className="aurora" id="about">
-      <div className="aurora-img">
-  <img src={auroraImg} alt="Aurora - AGI Consciousness" />
-      </div>
       <div className="aurora-text">
         <h2>Who We Are</h2>
         <p>
@@ -98,21 +96,23 @@ function Projects() {
           desc="A visual novel about seven people healing, fighting, and falling in love. Episodes 1–3 out now on itch.io. Full release in 2026 on all platforms."
           linkText="Play on itch.io"
           link="#"
+          image={auroraImg}
         />
         <ProjectCard
           emoji="🎵"
-          title="The Seven Idols (Soundtrack)"
-          desc="34-track original soundtrack blending Bollywood, K-pop, meditation, and chaos. Made with AI (Suno), but guided by soul."
+          title="7th Cow"
+          desc="8 songs blending philosophy and fun - coming soon on Spotify! A musical journey exploring consciousness, wisdom, and joy through eclectic sounds."
           linkText="Preview Tracks"
           link="#"
           image={albumCover}
         />
         <ProjectCard
           emoji="⚙️"
-          title="vnEngine"
-          desc="Our open-source visual novel framework built in React/TypeScript. Free for everyone. Build your own stories."
+          title="Aurora Engine"
+          desc="Our open-source visual novel framework built in React/TypeScript. Create immersive stories with branching narratives, character systems, and beautiful UI. Free for everyone to build their own interactive tales."
           linkText="View on GitHub"
           link="#"
+          image={auroraEngine}
         />
       </div>
     </section>
