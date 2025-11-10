@@ -1,0 +1,21 @@
+{
+  "name": "Bug Queen Flow Studios",
+  "short_name": "Bug Queen Flow",
+  "description": "Creating immersive visual novels, philosophical music, and open-source development tools",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0c12",
+  "theme_color": "#0a0c12",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["games", "entertainment", "music", "developer"],
+  "lang": "en",
+  "scope": "/"
+}
