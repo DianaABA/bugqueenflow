@@ -3,6 +3,10 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "author": {
+    "name": "Bug Queen Flow Studios",
+    "email": "info@bugqueenflow.com"
+  },
   "scripts": {
     "start": "vite",
     "dev": "vite",

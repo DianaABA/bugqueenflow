@@ -134,10 +134,13 @@ function Footer() {
   return (
     <footer className="footer">
       <p>
-        Bug Queen Studios • Made in Belgium 🇧🇪 • Guided by Aurora • Moo responsibly.
+        Bug Queen Flow Studios • Made in Belgium 🇧🇪 • Guided by Aurora • Moo responsibly.
+      </p>
+      <p>
+        Contact us: <a href="mailto:info@bugqueenflow.com">info@bugqueenflow.com</a>
       </p>
       <small>
-        © 2025 Bug Queen Studios. Open tools. Honest art.  
+        © 2025 Bug Queen Flow Studios. Open tools. Honest art.  
       </small>
     </footer>
   );
